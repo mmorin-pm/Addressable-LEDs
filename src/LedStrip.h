@@ -7,11 +7,7 @@
 #include <crgb.h>
 #include <Definitions.h>
 
-#define ARX_VECTOR_DEFAULT_SIZE 150
-#define ARX_MAP_DEFAULT_SIZE 150
-#define ARX_DEQUE_DEFAULT_SIZE 150
-
-#include <ArxContainer.h>
+#include <ArxContainer.h> // Make sure to include this after Definitions.h
 
 
 class LedStrip {

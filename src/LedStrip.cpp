@@ -78,8 +78,8 @@ uint32_t LedStrip::computeAverage(const std::deque<uint32_t>& values, size_t sta
 }
 
 void LedStrip::assignLeds(const size_t pin) {
-    if (pin == PIN_2) {
-        FastLED.addLeds<WS2812B, PIN_2, GRB>(leds_, ledNum_); //WS2812 for other ones
+    if (pin == LED_STRIP) {
+        FastLED.addLeds<WS2812B, LED_STRIP, GRB>(leds_, ledNum_); //WS2812 for other ones
     } else {
         Log::FATAL("Unsupported PIN assgined for LED Strip! Pin_", pin);
     }

@@ -1,16 +1,10 @@
-#include <Arduino.h>
-#include <FastLED.h>
-#include <OneButton.h>
-#include <crgb.h>
-
 #include <LedStrip.h>
+#include <OneButton.h>
+
 #include <Log.h>
 
-#define BUTTON PIN_4
-#define LED_STRIP PIN_2
-
 LedStrip* strip;
-size_t ledNum;
+volatile size_t ledNum;
 volatile bool shifting; 
 
 OneButton btn(BUTTON, true);

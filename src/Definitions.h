@@ -15,3 +15,10 @@
 #define PIN_12    12
 #define PIN_13    13
 #define PIN_14    14
+
+#define BUTTON PIN_4
+#define LED_STRIP PIN_2
+
+#define ARX_VECTOR_DEFAULT_SIZE 150
+#define ARX_MAP_DEFAULT_SIZE 150
+#define ARX_DEQUE_DEFAULT_SIZE 150
