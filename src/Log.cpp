@@ -1,6 +1,6 @@
 #include <Log.h>
 
-size_t Log::loggingLevel = INFO;
+size_t Log::loggingLevel = level::Info;
 
 void Log::config() {
     static bool isConfigured = false;
@@ -21,38 +21,38 @@ void Log::setLogLevel(size_t level) {
 }
 
 void Log::LOG_E(const char msg[]) {
-    Log::LOG(msg, ERROR, "ERROR");
+    Log::LOG(msg, level::Error, "ERROR");
 }
 
 void Log::LOG_E(const char msg[], uint32_t val) {
-    Log::LOG(msg, ERROR, "ERROR", val);
+    Log::LOG(msg, level::Error, "ERROR", val);
 }
 
 void Log::LOG_I(const char msg[]) {
-    Log::LOG(msg, INFO, "INFO");
+    Log::LOG(msg, level::Info, "INFO");
 }
 
 void Log::LOG_I(const char msg[], uint32_t val) {
-    Log::LOG(msg, INFO, "INFO", val);
+    Log::LOG(msg, level::Info, "INFO", val);
 }
 
 void Log::LOG_D(const char msg[]) {
-    Log::LOG(msg, DEBUG, "DEBUG");
+    Log::LOG(msg, level::Debug, "DEBUG");
 }
 
 void Log::LOG_D(const char msg[], uint32_t val) {
-    Log::LOG(msg, DEBUG, "DEBUG", val);
+    Log::LOG(msg, level::Debug, "DEBUG", val);
 }
 
 void Log::LOG_T(const char msg[]) {
-    Log::LOG(msg, TRACE, "TRACE");
+    Log::LOG(msg, level::Trace, "TRACE");
 }
 
 void Log::LOG_T(const char msg[], uint32_t val) {
-    Log::LOG(msg, TRACE, "TRACE", val);
+    Log::LOG(msg, level::Trace, "TRACE", val);
 }
 
-void Log::LOG(const char msg[], size_t lvl, const char tag[]) {
+void Log::LOG(const char msg[], level lvl, const char tag[]) {
     Log::config();
     if (loggingLevel >= lvl) {
         Serial.print(tag);
@@ -61,7 +61,7 @@ void Log::LOG(const char msg[], size_t lvl, const char tag[]) {
     }
 }
 
-void Log::LOG(const char msg[], size_t lvl, const char tag[], uint32_t val) {
+void Log::LOG(const char msg[], level lvl, const char tag[], uint32_t val) {
     Log::config();
     if (loggingLevel >= lvl) {
         Serial.print(tag);

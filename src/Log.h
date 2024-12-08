@@ -3,10 +3,13 @@
 #include <Arduino.h>
 
 #define SERIAL_SPEED 9600
-#define ERROR 0
-#define INFO 1
-#define DEBUG 2
-#define TRACE 3
+
+enum level {
+    Error,
+    Info,
+    Debug, 
+    Trace
+};
 
 class Log {
     public:
@@ -30,7 +33,7 @@ class Log {
         static void FATAL(const char msg[], uint32_t val);
 
     private:
-        static void LOG(const char msg[], size_t lvl, const char tag[]);
-        static void LOG(const char msg[], size_t lvl, const char tag[], uint32_t val);
+        static void LOG(const char msg[], level lvl, const char tag[]);
+        static void LOG(const char msg[], level lvl, const char tag[], uint32_t val);
         static void config();
 };

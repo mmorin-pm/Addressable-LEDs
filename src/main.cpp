@@ -36,7 +36,7 @@ static void singleClick() {
 }
 
 void setup() {
-  Log::setLogLevel(DEBUG);
+  Log::setLogLevel(level::Debug);
 
   strip = new LedStrip(LED_STRIP, 140, 20);
   strip->startupSequence();
