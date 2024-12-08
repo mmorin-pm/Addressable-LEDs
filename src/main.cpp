@@ -3,11 +3,11 @@
 
 #include <Log.h>
 
-LedStrip* strip;
 volatile size_t ledNum;
 volatile bool shifting; 
 
-OneButton btn(BUTTON, true);
+LedStrip* strip;
+OneButton btn(BUTTON);
 
 static void shiftColors() {
   shifting = true;
@@ -38,7 +38,7 @@ static void singleClick() {
 void setup() {
   Log::setLogLevel(level::Debug);
 
-  strip = new LedStrip(LED_STRIP, 140, 20);
+  strip = new LedStrip(LED_STRIP, LED_NUMBER, BRIGHTNESS);
   strip->startupSequence();
 
   btn.attachClick(singleClick);
