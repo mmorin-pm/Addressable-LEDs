@@ -10,11 +10,20 @@ enum level {
     Trace
 };
 
+enum transport {
+    SerialPort,
+    TelnetPort
+};
+
 class Log {
     public:
         static size_t loggingLevel;
+        static transport tran;
+        static bool telnetConnected;
 
-        static void setLogLevel(size_t level);
+        static void setLogLevel(size_t level, transport t);
+
+        static void logLoop();
 
         static void LOG_E(const char msg[]);
         static void LOG_E(const char msg[], uint32_t val);

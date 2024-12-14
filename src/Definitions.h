@@ -26,6 +26,7 @@
 
 // Serial
 #define SERIAL_SPEED 115200
+#define TELNET_PORT 23
 
 // Button Mapping & Settings
 #define BUTTON PIN_21
