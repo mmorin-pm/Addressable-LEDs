@@ -16,12 +16,19 @@
 #define PIN_12    12
 #define PIN_13    13
 #define PIN_14    14
+#define PIN_15    15
+#define PIN_16    16
+#define PIN_17    17
+#define PIN_18    18
+#define PIN_19    19
+#define PIN_20    20
+#define PIN_21    21
 
 // Serial
-#define SERIAL_SPEED 9600
+#define SERIAL_SPEED 115200
 
 // Button Mapping & Settings
-#define BUTTON PIN_4
+#define BUTTON PIN_21
 
 // LED Strip Mapping & Settings
 #define LED_STRIP PIN_2
