@@ -47,7 +47,9 @@ void setup() {
   btn.attachDuringLongPress(shiftColors);
   btn.attachLongPressStop(stopShifting);
   ledNum = 1;
-
+  Log::LOG_D("Total heap: ", ESP.getHeapSize());
+  Log::LOG_D("Free heap: ", ESP.getFreeHeap());
+  Log::LOG_I("Free heap %: ", 100*(float)ESP.getFreeHeap()/ESP.getHeapSize());
   Log::LOG_I("Setup complete! Starting now...");
 }
 
