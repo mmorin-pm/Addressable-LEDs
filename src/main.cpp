@@ -1,7 +1,8 @@
 #include <LedStrip.h>
 #include <OneButton.h>
-
 #include <Log.h>
+#include <OTA.h>
+
 
 volatile size_t ledNum;
 volatile bool shifting; 
@@ -37,6 +38,7 @@ static void singleClick() {
 
 void setup() {
   Log::setLogLevel(level::Debug);
+  setupOTA();
 
   strip = new LedStrip(LED_STRIP, LED_NUMBER, BRIGHTNESS);
   strip->startupSequence();
@@ -50,6 +52,7 @@ void setup() {
 }
 
 void loop() {
+  ArduinoOTA.handle();
   btn.tick();
   if (shifting) {
     strip->shiftColorsUp(1, true);
