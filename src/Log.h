@@ -1,8 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
-
-#define SERIAL_SPEED 9600
+#include <Definitions.h>
 
 enum level {
     Error,

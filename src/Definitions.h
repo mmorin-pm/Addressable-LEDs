@@ -17,6 +17,9 @@
 #define PIN_13    13
 #define PIN_14    14
 
+// Serial
+#define SERIAL_SPEED 9600
+
 // Button Mapping & Settings
 #define BUTTON PIN_4
 
